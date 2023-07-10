@@ -9,6 +9,8 @@ IF A_IsCompiled {
 	;	指定腳本要使用的路徑 C:\Users\<UserName>\AppData\Roaming
 	fileInstallPath := A_AppData
 	fileInstallFolder := fileInstallPath "\" scriptFolder
+	;	建立主目錄
+	DirCreate fileInstallFolder
 
 	;	指定 config 路徑
 	configPath := fileInstallFolder "\config.ini"
@@ -27,8 +29,6 @@ IF A_IsCompiled {
 		)",
 		configPath, "UTF-16"
 	}
-
-
 
 	;	新增子資料夾
 	arr := []
